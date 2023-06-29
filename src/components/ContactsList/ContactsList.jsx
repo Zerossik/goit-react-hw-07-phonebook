@@ -23,7 +23,7 @@ export function ContactsList({ title }) {
   return (
     <List>
       <h2>{title}</h2>
-      {isLoading && <Dna wrapperStyle={{ margin: 'auto' }} />}
+
       {error ? (
         <h2>{error}</h2>
       ) : (
@@ -31,6 +31,7 @@ export function ContactsList({ title }) {
           <ContactListItem name={name} number={number} key={id} id={id} />
         ))
       )}
+      {isLoading && <Dna wrapperStyle={{ margin: 'auto' }} />}
     </List>
   );
 }
